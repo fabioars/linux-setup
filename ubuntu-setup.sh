@@ -142,6 +142,10 @@ install_firacode() {
     fc-cache -f
 }
 
+install_vlc() {
+    sudo apt-get install vlc -y
+}
+
 install_all() {
     start
     install_git
@@ -157,6 +161,7 @@ install_all() {
     install_android
     install_telegram
     install_firacode
+    install_vlc
 }
 
 install_all
