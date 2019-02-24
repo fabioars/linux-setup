@@ -13,16 +13,18 @@ start() {
     sudo apt-get install vim -y
 }
 
-# Install Terminal
-install_terminal() {
-    sudo apt install tilix -y
-}
-
 # Install Git
 install_git() {
     sudo apt install git -y
     git config --global user.name "Fabio Soares"
     git config --global user.email fabioars@live.com 
+}
+
+# Install Terminal
+install_terminal() {
+    sudo apt install tilix -y
+    sudo apt install zsh -y
+    sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 }
 
 # Install Python
@@ -142,8 +144,8 @@ install_firacode() {
 
 install_all() {
     start
-    install_terminal
     install_git
+    install_terminal
     install_python
     install_spotify
     install_gnome_tweak
