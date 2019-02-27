@@ -31,6 +31,10 @@ install_terminal() {
 install_python() {
     sudo apt-get install python3 python3-pip -y
 
+    pip3 install --user virutalenv
+
+    echo export PATH="$PATH:$HOME/.local/bin" >> $HOME/.zshrc
+
     # Install PyCharm
     sudo snap install pycharm-community --classic
 }
@@ -146,6 +150,13 @@ install_vlc() {
     sudo apt-get install vlc -y
 }
 
+install_steam() {
+    wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+    sudo dpkg -i steam.deb
+    sudo apt-get install -f -y
+    rm -rf steam.deb
+}
+
 install_all() {
     start
     install_git
@@ -162,6 +173,7 @@ install_all() {
     install_telegram
     install_firacode
     install_vlc
+    install_steam
 }
 
 install_all
