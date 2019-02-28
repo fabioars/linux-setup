@@ -157,6 +157,15 @@ install_steam() {
     rm -rf steam.deb
 }
 
+install_flutter() {
+    create_softwares_folder
+    cd ~/Softwares
+    wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.2.1-stable.tar.xz
+    tar xf flutter_linux_v1.2.1-stable.tar.xz
+    echo export PATH="$PATH:`pwd`/flutter/bin" >> $HOME/.zshrc
+    cd ~
+}
+
 install_all() {
     start
     install_git
@@ -174,6 +183,7 @@ install_all() {
     install_firacode
     install_vlc
     install_steam
+    install_flutter
 }
 
 install_all
