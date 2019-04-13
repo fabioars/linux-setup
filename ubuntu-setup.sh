@@ -81,10 +81,7 @@ install_chrome() {
 
 # Install VSCode
 install_vscode() {
-    wget https://az764295.vo.msecnd.net/stable/1b8e8302e405050205e69b59abb3559592bb9e60/code_1.31.1-1549938243_amd64.deb
-    sudo dpkg -i code_1.31.1-1549938243_amd64.deb
-    rm -rf code_1.31.1-1549938243_amd64.deb
-    sudo apt-get install -f -y
+    sudo snap install code --classic
 }
 
 create_softwares_folder() {
