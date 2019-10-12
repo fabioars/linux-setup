@@ -63,6 +63,9 @@ install_node() {
     npm i -g create-react-native-app
     npm i -g gitignore
     echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    sudo apt-get update && sudo apt-get install --no-install-recommends yarn -y
 }
 
 # Install Numix
