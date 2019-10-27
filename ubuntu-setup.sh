@@ -109,7 +109,7 @@ install_android() {
     wget https://dl.google.com/dl/android/studio/ide-zips/3.3.1.0/android-studio-ide-182.5264788-linux.zip
     unzip android-studio-ide-182.5264788-linux.zip
     rm -rf android-studio-ide-182.5264788-linux.zip
-    sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils -y 
+    sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y
     sudo adduser $(whoami) kvm
     cd ~
 }
