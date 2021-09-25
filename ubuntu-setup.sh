@@ -18,6 +18,7 @@ install_git() {
     sudo apt install git -y
     git config --global user.name "Fabio Soares"
     git config --global user.email fabioars@live.com 
+    git config --global init.defaultBranch main
 }
 
 # Install Terminal
