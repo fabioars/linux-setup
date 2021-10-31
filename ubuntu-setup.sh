@@ -26,6 +26,10 @@ install_terminal() {
     sudo apt install tilix -y
     sudo apt install zsh -y
     sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    
+    # spf13 vim
+    curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+    sh <(curl https://j.mp/spf13-vim3 -L)
 }
 
 # Install Python
