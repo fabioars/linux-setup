@@ -6,11 +6,8 @@ start() {
     # Install Ubuntu Restricted Extras
     sudo apt-get install ubuntu-restricted-extras -y
 
-    # Install Curl
-    sudo apt-get install curl -y
-
-    # Install Vim
-    sudo apt-get install vim -y
+    # Install
+    sudo apt-get install curl vim make -y
 }
 
 # Install Git
