@@ -10,7 +10,7 @@ typeset +H my_gray="$FG[247]"
 
 # VCS
 YS_VCS_PROMPT_PREFIX1=" %{$my_gray%}on%{$reset_color%} "
-YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
+YS_VCS_PROMPT_PREFIX2="@%{$fg[cyan]%}"
 YS_VCS_PROMPT_SUFFIX="%{$reset_color%}"
 YS_VCS_PROMPT_DIRTY=" %{$fg[red]%}✗"
 YS_VCS_PROMPT_CLEAN=" %{$fg[green]%}✓"
@@ -53,20 +53,19 @@ local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Prompt format:
 #
-# PRIVILEGES USER @ MACHINE in DIRECTORY on git:BRANCH STATE [TIME] C:LAST_EXIT_CODE
+# > @ DIRECTORY on git:BRANCH STATE [TIME] C:LAST_EXIT_CODE
 # $ COMMAND
 #
 # For example:
 #
-# % ys @ ys-mbp in ~/.oh-my-zsh on git:master x [21:47:42] C:0
-# $
+# > @ ~/Workspace/service on git:main ✓ [11:05:15]
+# λ
 PROMPT="
-%{$terminfo[bold]$fg[blue]%}λ%{$reset_color%} \
-@ \
+%{$terminfo[bold]$fg[red]%}>%{$reset_color%} \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
 ${hg_info}\
 ${git_info}\
 ${venv_info}\
  \
 %{$my_gray%}[%*] $exit_code
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[cyan]%}λ %{$reset_color%}"
